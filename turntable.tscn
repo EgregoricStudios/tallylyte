@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dee16heb0ij5q"]
+
+[ext_resource type="PackedScene" uid="uid://b7v0jd1eqt8jw" path="res://RECORDPLAYER.blend" id="1_l522m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwi82"]
+albedo_color = Color(0.27591416, 0.29977956, 0.46489096, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h26l"]
+albedo_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+metallic = 0.6
+metallic_specular = 0.36
+roughness = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ufqq"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.93
+
+[node name="RECORDPLAYER" instance=ExtResource("1_l522m")]
+
+[node name="BODYETC" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_qwi82")
+
+[node name="DISK" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_7h26l")
+
+[node name="LIGHT" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_4ufqq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LIGHT" index="0"]
+transform = Transform3D(100, 0, 0, 0, 50, 0, 0, 0, 100, 0, 0.346323, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.02

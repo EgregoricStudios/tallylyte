@@ -1,0 +1,53 @@
+extends Node
+# State Machine Prototype 0.0.0.0a ("Fine Moy I'll do it")
+var state:String = "idle"
+# valid states
+# "idle"
+# "hurting"
+# "attacking"
+# "dead"
+# "can_combo"
+var combo_state: String = "none"
+var dead: bool = false
+var attacking: bool = false
+var can_combo: bool = false
+var perfectguarding: bool = false
+var guarding: bool = false
+var hurting: bool = false
+var player1: Node2D
+var player1animator: Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+	player1 = $".."
+	player1animator = $"../AnimatedSprite2D"
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	state_check()
+
+func state_check():
+	if !player1animator.is_playing():
+		if state == "attacking":
+			attacking = false
+		if state == "hurting":
+			hurting = false
+		if state == "guarding" and !Input.is_action_pressed("guard"):
+			guarding = false
+	if dead:
+		state = "dead"
+		return
+	if !attacking:
+		if !hurting:
+			if !guarding:
+				state = "idle"
+				return
+	if hurting:
+		state = "hurting"
+		return
+	if guarding:
+		state = "guarding"
+		return
+	if attacking:
+		state = "attacking"

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjsrpwv0tku57"]
+
+[ext_resource type="Script" uid="uid://jx18nmcfbhdr" path="res://button.gd" id="1_yi1a7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 136.0
+offset_top = 105.0
+offset_right = 144.0
+offset_bottom = 113.0
+text = "start game (testcell)"
+script = ExtResource("1_yi1a7")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button"]
+visible = false
+layout_mode = 0
+offset_left = 110.0
+offset_top = -34.0
+offset_right = 189.0
+offset_bottom = -11.0
+text = "Hi, planet!"

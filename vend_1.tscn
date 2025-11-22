@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://c05wprj521ab0"]
+
+[ext_resource type="PackedScene" uid="uid://cqypmblboy82g" path="res://vend1.blend" id="1_ydh1j"]
+[ext_resource type="Shader" uid="uid://06373uyegv05" path="res://vend_1.gdshader" id="2_ce5d1"]
+[ext_resource type="Texture2D" uid="uid://dr4cv0t1b4v3p" path="res://keypad.png" id="2_io4vo"]
+[ext_resource type="Texture2D" uid="uid://tylqdbh035ou" path="res://sevensegmentdisplay.png" id="3_ce5d1"]
+[ext_resource type="Texture2D" uid="uid://cc00xw7hju6cs" path="res://vend1wrap.png" id="3_iao3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x4vn2"]
+render_priority = 0
+shader = ExtResource("2_ce5d1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sl8eb"]
+albedo_texture = ExtResource("3_iao3f")
+texture_filter = 0
+texture_repeat = false
+
+[node name="vend1" instance=ExtResource("1_ydh1j")]
+
+[node name="Cube" parent="." index="0"]
+material_override = SubResource("ShaderMaterial_x4vn2")
+material_overlay = SubResource("StandardMaterial3D_sl8eb")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="1"]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0.34548366, 1.0736675, 0.31042707)
+texture = ExtResource("2_io4vo")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.35912699, 1.1322732, 0.30630356)
+texture = ExtResource("3_ce5d1")

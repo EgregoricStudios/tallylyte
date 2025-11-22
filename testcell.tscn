@@ -1,0 +1,510 @@
+[gd_scene load_steps=60 format=3 uid="uid://b1nw50ssgs6ek"]
+
+[ext_resource type="Script" uid="uid://bhxjxxd4vgx1b" path="res://stickman.gd" id="1_j6ja2"]
+[ext_resource type="Texture2D" uid="uid://cy3obij5styh8" path="res://sticktest.png" id="2_j6tky"]
+[ext_resource type="Texture2D" uid="uid://clb1fy20bjka6" path="res://sticktest_kick.png" id="3_60gic"]
+[ext_resource type="Script" uid="uid://b8ko7420gd0wp" path="res://training_dummy.gd" id="3_gmw1k"]
+[ext_resource type="Texture2D" uid="uid://cxf7d52dfj0ur" path="res://yardstick.png" id="3_j6tky"]
+[ext_resource type="Script" uid="uid://oxx41purjuon" path="res://training_dummy_hurty.gd" id="4_60gic"]
+[ext_resource type="Texture2D" uid="uid://c0ch8u6s4h32v" path="res://sticktestguard.png" id="4_cwybb"]
+[ext_resource type="Texture2D" uid="uid://b6wmqm7bxkc7s" path="res://athena_idle_pract.png" id="5_6iu31"]
+[ext_resource type="Script" uid="uid://bw2jqo8p2gnbp" path="res://p1glob.gd" id="5_cwybb"]
+[ext_resource type="Script" uid="uid://b48bt1enpv7me" path="res://area_1d.gd" id="6_6dvyd"]
+[ext_resource type="Script" uid="uid://dofp3hclm5wpy" path="res://p2glob.gd" id="8_dttql"]
+[ext_resource type="PackedScene" uid="uid://q8iquwwiuhc0" path="res://chair,,,.tscn" id="11_7hhdb"]
+[ext_resource type="Shader" uid="uid://06373uyegv05" path="res://vend_1.gdshader" id="12_erxu1"]
+[ext_resource type="PackedScene" uid="uid://dg2kmknp7ef4o" path="res://trainingroomfloor.tscn" id="13_erxu1"]
+[ext_resource type="PackedScene" uid="uid://bfp7xbammccb4" path="res://parkbench.tscn" id="14_erxu1"]
+[ext_resource type="PackedScene" uid="uid://c05wprj521ab0" path="res://vend_1.tscn" id="15_72si3"]
+[ext_resource type="PackedScene" uid="uid://cq0em6u8rrdc6" path="res://vendc.tscn" id="16_erxu1"]
+[ext_resource type="PackedScene" uid="uid://buw71y4t30rbo" path="res://voyantewallbasementlol.blend" id="18_ygyu4"]
+[ext_resource type="PackedScene" uid="uid://dhtekbdpda5s5" path="res://voyanteceiling.blend" id="19_svrsc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ygyu4"]
+viewport_path = NodePath("Camera3D/Node2D/CanvasLayer/SubViewport")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1npe"]
+size = Vector2(45, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiwth"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(1034, 1027, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6ja2"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(2068, 1027, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmw1k"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(3102, 1027, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60gic"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(4136, 1027, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwybb"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(3102, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfoe3"]
+atlas = ExtResource("3_60gic")
+region = Rect2(0, 0, 1027, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgs52"]
+atlas = ExtResource("3_60gic")
+region = Rect2(1027, 0, 1027, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5io1"]
+atlas = ExtResource("3_60gic")
+region = Rect2(2054, 0, 1027, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drspq"]
+atlas = ExtResource("3_60gic")
+region = Rect2(3081, 0, 1027, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eigf3"]
+atlas = ExtResource("3_60gic")
+region = Rect2(4108, 0, 1027, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfjfb"]
+atlas = ExtResource("3_60gic")
+region = Rect2(5135, 0, 1027, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1mlp"]
+atlas = ExtResource("3_60gic")
+region = Rect2(6162, 0, 1027, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqupk"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(0, 3081, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72si3"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(1034, 3081, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erxu1"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(2068, 3081, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygyu4"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(3102, 3081, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svrsc"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(4136, 3081, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as4hp"]
+atlas = ExtResource("4_cwybb")
+region = Rect2(0, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1r3p"]
+atlas = ExtResource("4_cwybb")
+region = Rect2(1034, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf5ll"]
+atlas = ExtResource("4_cwybb")
+region = Rect2(2068, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dttql"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(2068, 2054, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gy7bv"]
+atlas = ExtResource("5_6iu31")
+region = Rect2(0, 0, 68, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dvyd"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(0, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ean4b"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(1034, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i37a6"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(2068, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iu31"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(3102, 0, 1034, 1027)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hhdb"]
+atlas = ExtResource("2_j6tky")
+region = Rect2(4136, 0, 1034, 1027)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqupk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiwth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6ja2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmw1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60gic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwybb")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfoe3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgs52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5io1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drspq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eigf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfjfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1mlp")
+}],
+"loop": false,
+"name": &"attack_combo_1_1",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqupk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72si3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erxu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygyu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svrsc")
+}],
+"loop": false,
+"name": &"die",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as4hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1r3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf5ll")
+}],
+"loop": false,
+"name": &"guard",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dttql")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gy7bv")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dvyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ean4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i37a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iu31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hhdb")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="Environment" id="Environment_y8ni3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6tky"]
+size = Vector2(2336, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72si3"]
+size = Vector2(98.5, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erxu1"]
+size = Vector2(67, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygyu4"]
+size = Vector2(64.5, 114)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ygyu4"]
+render_priority = 0
+shader = ExtResource("12_erxu1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svrsc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c1npe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wiwth"]
+albedo_texture = ExtResource("3_j6tky")
+uv1_scale = Vector3(3.03, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j6ja2"]
+size = Vector3(1, 3, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4075985, 20)
+top_level = true
+visible = false
+
+[node name="Node2D" type="Node2D" parent="Camera3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D/Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D/Node2D/CanvasLayer"]
+texture_filter = 2
+offset_right = 1908.0
+offset_bottom = 1001.0
+texture = SubResource("ViewportTexture_ygyu4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Camera3D/Node2D/CanvasLayer"]
+position = Vector2(199, 838)
+script = ExtResource("1_j6ja2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+position = Vector2(-0.9399948, -5.4250183)
+shape = SubResource("RectangleShape2D_c1npe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+texture_filter = 1
+position = Vector2(4.0600014, -51.570026)
+scale = Vector2(0.18, 0.18)
+sprite_frames = SubResource("SpriteFrames_wqupk")
+animation = &"idle"
+
+[node name="Timer" type="Timer" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+position = Vector2(9.060005, -28.425018)
+target_position = Vector2(31, -1)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RayCastTestKick" type="RayCast2D" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+position = Vector2(11.060005, -8.425018)
+target_position = Vector2(31, -1)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="P1Glob" type="Node2D" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+position = Vector2(-27.939995, -64.42502)
+script = ExtResource("5_cwybb")
+
+[node name="Area2D" type="Area2D" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+position = Vector2(-27.939995, -64.42502)
+collision_layer = 131072
+collision_mask = 0
+script = ExtResource("6_6dvyd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D/Area2D"]
+position = Vector2(25.5, 61)
+shape = SubResource("RectangleShape2D_c1npe")
+
+[node name="Label" type="Label" parent="Camera3D/Node2D/CanvasLayer/CharacterBody2D"]
+visible = false
+offset_left = 26.060005
+offset_top = -69.42502
+offset_right = 445.06
+offset_bottom = 83.57498
+text = "Forward input achieved ! Congratulation! Your winner!
+Wow that's so cool can I suck on your crotch
+say that shit cringe and you prob'ly get to fuck her
+never dropping shit you call yourself a hitmaker
+i can see you mad through the hitmarker
+"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D/Node2D/CanvasLayer"]
+environment = SubResource("Environment_y8ni3")
+
+[node name="the_box" type="StaticBody2D" parent="Camera3D/Node2D/CanvasLayer"]
+
+[node name="floor" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/the_box"]
+position = Vector2(892.135, 941.46)
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="ceiling" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/the_box"]
+position = Vector2(940, 0)
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="westwall" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/the_box"]
+position = Vector2(0, 313.17)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="eastwall" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/the_box"]
+position = Vector2(1908, 133.22)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="parkbench" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/the_box"]
+position = Vector2(1053.75, 923)
+shape = SubResource("RectangleShape2D_72si3")
+
+[node name="vendatron" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/the_box"]
+position = Vector2(829.5, 874)
+shape = SubResource("RectangleShape2D_erxu1")
+
+[node name="pill" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/the_box"]
+position = Vector2(299.75, 865)
+shape = SubResource("RectangleShape2D_ygyu4")
+
+[node name="SubViewport" type="SubViewport" parent="Camera3D/Node2D/CanvasLayer"]
+transparent_bg = true
+screen_space_aa = 1
+size = Vector2i(1908, 1001)
+
+[node name="Camera3D2" type="Camera3D" parent="Camera3D/Node2D/CanvasLayer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4075985, 20)
+top_level = true
+current = true
+fov = 42.0
+near = 19.6
+
+[node name="training_dummy" type="CharacterBody2D" parent="Camera3D/Node2D/CanvasLayer"]
+position = Vector2(1673, 826)
+rotation = -3.1415927
+scale = Vector2(1, -1)
+script = ExtResource("3_gmw1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/training_dummy"]
+position = Vector2(0.5700073, 0.5749817)
+shape = SubResource("RectangleShape2D_c1npe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera3D/Node2D/CanvasLayer/training_dummy"]
+texture_filter = 1
+position = Vector2(5.5700035, -45.570015)
+scale = Vector2(0.18, 0.18)
+sprite_frames = SubResource("SpriteFrames_wqupk")
+animation = &"attack_combo_1_1"
+frame = 6
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="Camera3D/Node2D/CanvasLayer/training_dummy"]
+position = Vector2(-26.429993, -58.42502)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_60gic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera3D/Node2D/CanvasLayer/training_dummy/Area2D"]
+position = Vector2(25.5, 61)
+shape = SubResource("RectangleShape2D_c1npe")
+
+[node name="p2glob" type="Node2D" parent="Camera3D/Node2D/CanvasLayer/training_dummy"]
+position = Vector2(-26.429993, -58.42502)
+script = ExtResource("8_dttql")
+metadata/_custom_type_script = "uid://dofp3hclm5wpy"
+
+[node name="Timer" type="Timer" parent="Camera3D/Node2D/CanvasLayer/training_dummy"]
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="Camera3D/Node2D/CanvasLayer/training_dummy"]
+position = Vector2(10.570007, -22.425018)
+target_position = Vector2(31, -1)
+collision_mask = 131072
+collide_with_areas = true
+
+[node name="RayCastTestKick" type="RayCast2D" parent="Camera3D/Node2D/CanvasLayer/training_dummy"]
+position = Vector2(12.570007, -2.4250183)
+target_position = Vector2(31, -1)
+collision_mask = 131072
+collide_with_areas = true
+
+[node name="chair,,," parent="Camera3D/Node2D/CanvasLayer/training_dummy" instance=ExtResource("11_7hhdb")]
+transform = Transform3D(0.5975052, 0, 0.5975052, 0, 0.845, 0, -0.5975052, 0, 0.5975052, -3, 0, -1)
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/Node2D/CanvasLayer"]
+offset_left = -24.0
+offset_top = 927.0
+offset_right = 1945.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="testpill" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
+material_override = SubResource("ShaderMaterial_ygyu4")
+material_overlay = SubResource("StandardMaterial3D_svrsc")
+mesh = SubResource("CapsuleMesh_c1npe")
+skeleton = NodePath("../ruler")
+
+[node name="trainingroomfloor" parent="." instance=ExtResource("13_erxu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+
+[node name="parkbench" parent="." instance=ExtResource("14_erxu1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5217805, -4.172325e-07, -0.020057201)
+
+[node name="ruler" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
+material_override = SubResource("StandardMaterial3D_wiwth")
+mesh = SubResource("BoxMesh_j6ja2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.089754, 5.523023, 4.438225)
+light_energy = 3.309
+shadow_enabled = true
+shadow_bias = 0.33
+shadow_normal_bias = 0.85
+omni_range = 32.03254
+
+[node name="vend2" parent="." instance=ExtResource("15_72si3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.892, 0.01, 0.04)
+
+[node name="vendc2" parent="." instance=ExtResource("16_erxu1")]
+transform = Transform3D(0.8791916, 0, -0.47646838, 0, 1, 0, 0.47646838, 0, 0.8791916, 1.0838641, 0, -1.9081342)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -100.504585, 6.4075985, -108.80888)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="voyantewallbasementlol" parent="." instance=ExtResource("18_ygyu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.60485935)
+
+[node name="voyanteceiling" parent="." instance=ExtResource("19_svrsc")]
+transform = Transform3D(1.205, 0, 0, 0, 1.205, 0, 0, 0, 1.205, 0, 16.775, -0.5346596)
+visible = false
+
+[connection signal="timeout" from="Camera3D/Node2D/CanvasLayer/CharacterBody2D/Timer" to="Camera3D/Node2D/CanvasLayer/CharacterBody2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="Camera3D/Node2D/CanvasLayer/training_dummy/Timer" to="Camera3D/Node2D/CanvasLayer/training_dummy" method="_on_timer_timeout"]

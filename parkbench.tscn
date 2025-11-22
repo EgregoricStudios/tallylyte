@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfp7xbammccb4"]
+
+[ext_resource type="PackedScene" uid="uid://cscymmu6w7pdb" path="res://parkbenchy.blend" id="1_j3rju"]
+[ext_resource type="Shader" uid="uid://06373uyegv05" path="res://vend_1.gdshader" id="2_3y0l0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k652c"]
+render_priority = 0
+shader = ExtResource("2_3y0l0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpycy"]
+next_pass = SubResource("ShaderMaterial_k652c")
+albedo_color = Color(0.7403147, 0.81783366, 0.8751979, 1)
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7aueb"]
+render_priority = 0
+shader = ExtResource("2_3y0l0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8flr"]
+next_pass = SubResource("ShaderMaterial_7aueb")
+albedo_color = Color(0.37056538, 0.4170092, 0.30926096, 1)
+metallic_specular = 0.0
+roughness = 0.55
+
+[node name="parkbenchy" instance=ExtResource("1_j3rju")]
+
+[node name="Cube_002" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lpycy")
+surface_material_override/1 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/2 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/3 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/4 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/5 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/6 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/7 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/8 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/9 = SubResource("StandardMaterial3D_c8flr")
+surface_material_override/10 = SubResource("StandardMaterial3D_lpycy")

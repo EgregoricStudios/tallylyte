@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dg2kmknp7ef4o"]
+
+[ext_resource type="PackedScene" uid="uid://cxqcpl1dldrhk" path="res://trainingroomfloorv1.blend" id="1_o4uta"]
+[ext_resource type="Shader" uid="uid://06373uyegv05" path="res://vend_1.gdshader" id="2_n1lev"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fyxp"]
+render_priority = 0
+shader = ExtResource("2_n1lev")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hdlm"]
+next_pass = SubResource("ShaderMaterial_1fyxp")
+metallic = 0.85
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1htl1"]
+next_pass = SubResource("ShaderMaterial_1fyxp")
+albedo_color = Color(1, 0.43698302, 0.3468308, 1)
+metallic = 0.85
+roughness = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_80gve"]
+render_priority = 0
+shader = ExtResource("2_n1lev")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk5u6"]
+next_pass = SubResource("ShaderMaterial_80gve")
+albedo_color = Color(0.851769, 0.8517689, 0.85176885, 1)
+metallic = 0.85
+roughness = 0.4
+
+[node name="trainingroomfloorv1" instance=ExtResource("1_o4uta")]
+
+[node name="Cylinder" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_7hdlm")
+
+[node name="Cylinder_001" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_1htl1")
+
+[node name="Cylinder_002" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_qk5u6")

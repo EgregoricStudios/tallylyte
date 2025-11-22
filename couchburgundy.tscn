@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgsn6k8i1404y"]
+
+[ext_resource type="PackedScene" uid="uid://cu2hlsac4fj0q" path="res://couch,.blend" id="1_xentr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7mn3"]
+albedo_color = Color(0.91198856, 0.3240735, 0.49992853, 1)
+
+[node name="couch," instance=ExtResource("1_xentr")]
+
+[node name="Cube_002" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_m7mn3")

@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://ybenmwp88td2"]
+
+[ext_resource type="Material" uid="uid://dnqxh88bnum3q" path="res://clip_intersect_blacker.tres" id="2_bxxfm"]
+[ext_resource type="Texture2D" uid="uid://cxf7d52dfj0ur" path="res://yardstick.png" id="14_j7yv5"]
+
+[sub_resource type="Environment" id="Environment_y8ni3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6tky"]
+size = Vector2(2336, 50)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ygyu4"]
+viewport_path = NodePath("main display/2d root/CanvasLayer/3d-2d converter")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wiwth"]
+albedo_texture = ExtResource("14_j7yv5")
+uv1_scale = Vector3(3.03, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j6ja2"]
+size = Vector3(1, 3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnjwa"]
+next_pass = ExtResource("2_bxxfm")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7t8yo"]
+
+[node name="3d root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y8ni3")
+
+[node name="main display" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 20)
+top_level = true
+
+[node name="2d root" type="Node2D" parent="main display"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="main display/2d root"]
+
+[node name="screen boundaries" type="StaticBody2D" parent="main display/2d root/CanvasLayer"]
+
+[node name="floor" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(892.135, 941.46)
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="ceiling" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(940, 0)
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="westwall" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(0, 313.17)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="eastwall" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(1908, 133.22)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="insert p1 here" type="Node2D" parent="main display/2d root/CanvasLayer"]
+position = Vector2(175, 725)
+
+[node name="insert p2 here" type="Node2D" parent="main display/2d root/CanvasLayer"]
+position = Vector2(1680, 725)
+
+[node name="important - 3d-in-2d display" type="TextureRect" parent="main display/2d root/CanvasLayer"]
+offset_right = 1908.0
+offset_bottom = 1001.0
+texture = SubResource("ViewportTexture_ygyu4")
+
+[node name="3d-2d converter" type="SubViewport" parent="main display/2d root/CanvasLayer"]
+screen_space_aa = 1
+size = Vector2i(1908, 1001)
+
+[node name="3d cam" type="Camera3D" parent="main display/2d root/CanvasLayer/3d-2d converter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4075985, 20)
+top_level = true
+current = true
+fov = 42.0
+near = 19.6
+
+[node name="ColorRect" type="ColorRect" parent="main display/2d root/CanvasLayer"]
+offset_left = -24.0
+offset_top = 927.0
+offset_right = 1945.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="sizeref" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.5)
+material_override = SubResource("StandardMaterial3D_wiwth")
+mesh = SubResource("BoxMesh_j6ja2")
+
+[node name="temp - topdown light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -100.504585, 6.4075985, -108.80888)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="defaultfloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 5, 0, -1, -2)
+material_override = SubResource("StandardMaterial3D_mnjwa")
+mesh = SubResource("BoxMesh_7t8yo")

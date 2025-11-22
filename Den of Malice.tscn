@@ -1,0 +1,245 @@
+[gd_scene load_steps=33 format=3 uid="uid://cvfah2fy88u6g"]
+
+[ext_resource type="Texture2D" uid="uid://cxf7d52dfj0ur" path="res://yardstick.png" id="1_7oy2m"]
+[ext_resource type="Texture2D" uid="uid://dp268hmmg1nef" path="res://malicecarpet.png" id="2_hvaao"]
+[ext_resource type="Shader" uid="uid://06373uyegv05" path="res://vend_1.gdshader" id="2_oncfg"]
+[ext_resource type="Texture2D" uid="uid://5o4tvco2r0x1" path="res://estrusbanner.png" id="2_rva18"]
+[ext_resource type="PackedScene" uid="uid://cgsn6k8i1404y" path="res://couchburgundy.tscn" id="3_kn2x0"]
+[ext_resource type="PackedScene" uid="uid://cgg0fkga2hjcc" path="res://speaker_on_stand.tscn" id="4_rva18"]
+[ext_resource type="PackedScene" uid="uid://q8iquwwiuhc0" path="res://chair,,,.tscn" id="5_oncfg"]
+[ext_resource type="Texture2D" uid="uid://db8yw3o6tqpce" path="res://dickwall.png" id="6_kn2x0"]
+[ext_resource type="PackedScene" uid="uid://d2ytd8hsulxtq" path="res://MaliceWallLamp.tscn" id="6_rva18"]
+[ext_resource type="Material" uid="uid://dnqxh88bnum3q" path="res://clip_intersect_blacker.tres" id="9_70ufu"]
+[ext_resource type="Texture2D" uid="uid://b2vglh2fvcf6m" path="res://door no amey that is fucking stairs.png" id="10_70ufu"]
+[ext_resource type="PackedScene" uid="uid://lanbi7lx8nl5" path="res://entertainmenttable.tscn" id="12_in3uw"]
+[ext_resource type="PackedScene" uid="uid://dee16heb0ij5q" path="res://turntable.tscn" id="12_sfdon"]
+
+[sub_resource type="Environment" id="Environment_y8ni3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6tky"]
+size = Vector2(2336, 50)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ygyu4"]
+viewport_path = NodePath("main display/2d root/CanvasLayer/3d-2d converter")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wiwth"]
+albedo_texture = ExtResource("1_7oy2m")
+uv1_scale = Vector3(3.03, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j6ja2"]
+size = Vector3(1, 3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nswfr"]
+albedo_texture = ExtResource("2_hvaao")
+uv1_scale = Vector3(5.725, 5.725, 5.725)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_in3uw"]
+render_priority = 0
+shader = ExtResource("2_oncfg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7t8yo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rva18"]
+transparency = 1
+albedo_texture = ExtResource("2_rva18")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sfdon"]
+next_pass = ExtResource("9_70ufu")
+
+[sub_resource type="BoxMesh" id="BoxMesh_nswfr"]
+size = Vector3(0.185, 6.315, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jbcy"]
+next_pass = ExtResource("9_70ufu")
+
+[sub_resource type="BoxMesh" id="BoxMesh_hxc0h"]
+size = Vector3(0.185, 6.315, 1.11)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fiux4"]
+albedo_texture = ExtResource("6_kn2x0")
+metallic_specular = 0.0
+roughness = 0.68
+uv1_scale = Vector3(0.35, 0.35, 0.35)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_70ufu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kn2x0"]
+albedo_color = Color(0.5690257, 0.39368528, 0.2876414, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_70ufu"]
+size = Vector3(1, 1.59, 1.095)
+
+[sub_resource type="PrismMesh" id="PrismMesh_fiux4"]
+size = Vector3(1, 1.59, 17.435)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in3uw"]
+transparency = 1
+albedo_texture = ExtResource("10_70ufu")
+emission = Color(0.16196388, 0.10875226, 0, 1)
+emission_energy_multiplier = 0.35
+emission_texture = ExtResource("10_70ufu")
+heightmap_scale = 2.793
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("10_70ufu")
+heightmap_flip_texture = true
+backlight_enabled = true
+backlight = Color(0.728822, 0.728822, 0.728822, 1)
+
+[node name="3d root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y8ni3")
+
+[node name="main display" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 20)
+top_level = true
+
+[node name="2d root" type="Node2D" parent="main display"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="main display/2d root"]
+
+[node name="screen boundaries" type="StaticBody2D" parent="main display/2d root/CanvasLayer"]
+
+[node name="floor" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(892.135, 941.46)
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="ceiling" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(940, 0)
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="westwall" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(0, 313.17)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="eastwall" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/screen boundaries"]
+position = Vector2(1908, 133.22)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_j6tky")
+
+[node name="insert p1 here" type="Node2D" parent="main display/2d root/CanvasLayer"]
+position = Vector2(175, 725)
+
+[node name="insert p2 here" type="Node2D" parent="main display/2d root/CanvasLayer"]
+position = Vector2(1680, 725)
+
+[node name="important - 3d-in-2d display" type="TextureRect" parent="main display/2d root/CanvasLayer"]
+offset_right = 1908.0
+offset_bottom = 1001.0
+texture = SubResource("ViewportTexture_ygyu4")
+
+[node name="3d-2d converter" type="SubViewport" parent="main display/2d root/CanvasLayer"]
+screen_space_aa = 1
+size = Vector2i(1908, 1001)
+
+[node name="3d cam" type="Camera3D" parent="main display/2d root/CanvasLayer/3d-2d converter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4075985, 20)
+top_level = true
+current = true
+fov = 42.0
+near = 19.6
+
+[node name="ColorRect" type="ColorRect" parent="main display/2d root/CanvasLayer"]
+offset_left = -24.0
+offset_top = 927.0
+offset_right = 1945.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="main display/2d root/CanvasLayer"]
+offset_left = 948.0
+offset_top = 685.0
+offset_right = 960.0
+offset_bottom = 759.0
+color = Color(0, 0, 0, 1)
+
+[node name="sizeref" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5764072, 1.5, -0.5)
+material_override = SubResource("StandardMaterial3D_wiwth")
+mesh = SubResource("BoxMesh_j6ja2")
+
+[node name="defaultfloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 5, 0, -1, -2)
+material_override = SubResource("StandardMaterial3D_nswfr")
+material_overlay = SubResource("ShaderMaterial_in3uw")
+mesh = SubResource("BoxMesh_7t8yo")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, -7.972, 3.9982872, -3.9)
+material_override = SubResource("StandardMaterial3D_rva18")
+texture = ExtResource("2_rva18")
+
+[node name="weirdwalllamp2" parent="." instance=ExtResource("6_rva18")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.627921, 3, -3.9999998)
+
+[node name="weirdwalllamp" parent="." instance=ExtResource("6_rva18")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12, 3, -4)
+
+[node name="walls" type="Node3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, -8.742277e-08, 10.185881, 0, -1.9999999, -4.45239e-07, 0, 3.775398, -5)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(0.03333333, 0, 0, 0, -2.1855698e-08, -0.50000006, 0, 0.098175116, -4.2913704e-09, 0, -0.67108274, -0.43646407)
+material_override = SubResource("StandardMaterial3D_sfdon")
+mesh = SubResource("BoxMesh_nswfr")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(0.03333333, 0, 0, 0, 0.50000006, -1.7763568e-15, 0, -4.440892e-16, 0.098175116, 0, -1.3705593, -0.06849396)
+material_override = SubResource("StandardMaterial3D_6jbcy")
+mesh = SubResource("BoxMesh_hxc0h")
+skeleton = NodePath("../..")
+
+[node name="backwall" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, -1.7763568e-15, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_fiux4")
+mesh = SubResource("BoxMesh_70ufu")
+skeleton = NodePath("../..")
+
+[node name="Wall borders" type="Node3D" parent="walls"]
+transform = Transform3D(0.03333333, 0, 0, 0, -2.1855698e-08, -0.50000006, 0, 0.098175116, -4.2913704e-09, 0, -2.5000002, -0.37065017)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="walls/Wall borders"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.60982966, 0.59426355, -4.3707294)
+material_override = SubResource("StandardMaterial3D_kn2x0")
+mesh = SubResource("PrismMesh_70ufu")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/Wall borders"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.009868, 0.59426355, -4.3707294)
+material_override = SubResource("StandardMaterial3D_kn2x0")
+mesh = SubResource("PrismMesh_fiux4")
+skeleton = NodePath("../../..")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -1.7244604, 1.264733, -3.996519)
+material_override = SubResource("StandardMaterial3D_in3uw")
+texture = ExtResource("10_70ufu")
+
+[node name="furniture" type="Node3D" parent="."]
+
+[node name="chair,,," parent="furniture" instance=ExtResource("5_oncfg")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -4.164489, 0, -3.1175966)
+
+[node name="speaker_on_stand2" parent="furniture" instance=ExtResource("4_rva18")]
+transform = Transform3D(-0.86602545, 0, 0.5, 0, 1, 0, -0.5, 0, -0.86602545, -5.843271, 0, -2.9031649)
+
+[node name="speaker_on_stand" parent="furniture" instance=ExtResource("4_rva18")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, -10.080192, 0, -2.9031649)
+
+[node name="couch,2" parent="furniture" instance=ExtResource("3_kn2x0")]
+transform = Transform3D(0.88423884, 0, 0.46703494, 0, 1, 0, -0.46703494, 0, 0.88423884, -12.202819, 0, -2.1745808)
+
+[node name="RECORDPLAYER" parent="furniture" instance=ExtResource("12_sfdon")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -7.561979, 0.30579662, -3.650215)
+
+[node name="entertainmentcenterdeskthing" parent="." instance=ExtResource("12_in3uw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.034898, 0, -3.5217817)

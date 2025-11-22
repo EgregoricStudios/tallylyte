@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgg0fkga2hjcc"]
+
+[ext_resource type="PackedScene" uid="uid://dtqruycsjgjk7" path="res://pastand.blend" id="1_wfdlk"]
+[ext_resource type="Texture2D" uid="uid://m48g5qk5f8q3" path="res://speaker_mesh.png" id="2_i3j50"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cygj"]
+albedo_color = Color(0.39, 0.39, 0.3744, 1)
+metallic_specular = 0.75
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwcuu"]
+albedo_color = Color(0.9631918, 0.6986084, 0.6193687, 1)
+albedo_texture = ExtResource("2_i3j50")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m23d4"]
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 2.4
+
+[sub_resource type="SphereMesh" id="SphereMesh_okq2r"]
+radius = 0.01
+height = 0.02
+radial_segments = 8
+rings = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nav54"]
+albedo_color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_orhxy"]
+top_radius = 0.012
+bottom_radius = 0.017
+height = 0.04
+
+[node name="pastand" instance=ExtResource("1_wfdlk")]
+
+[node name="Cube_001" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_7cygj")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="1"]
+transform = Transform3D(-0.017999997, 0, -1.5736098e-09, 0, 0.017999997, 0, 1.5736098e-09, 0, -0.017999997, 0, 1.8416367, -0.27913463)
+material_override = SubResource("StandardMaterial3D_iwcuu")
+texture = ExtResource("2_i3j50")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D" index="0"]
+transform = Transform3D(0.30800003, 0, -3.5527137e-15, 0, 0.30800003, 0, 3.5527137e-15, 0, 0.30800003, 5.6588645, 12.895271, 0.41279793)
+material_override = SubResource("StandardMaterial3D_iwcuu")
+texture = ExtResource("2_i3j50")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D" index="1"]
+transform = Transform3D(0.30800003, 0, -3.5527137e-15, 0, 0.30800003, 0, 3.5527137e-15, 0, 0.30800003, -5.659, 12.895, 0.413)
+material_override = SubResource("StandardMaterial3D_iwcuu")
+texture = ExtResource("2_i3j50")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16598068, 1.7282171, -0.29800048)
+material_override = SubResource("StandardMaterial3D_m23d4")
+mesh = SubResource("SphereMesh_okq2r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.16598068, 1.6684798, -0.3031888)
+material_override = SubResource("StandardMaterial3D_nav54")
+mesh = SubResource("CylinderMesh_orhxy")

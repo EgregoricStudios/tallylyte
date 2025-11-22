@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://q8iquwwiuhc0"]
+
+[ext_resource type="PackedScene" uid="uid://d0qb2isd5vpsj" path="res://chair,,,.blend" id="1_svy3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hoxp"]
+albedo_color = Color(0.43244597, 0.18135709, 0.15782633, 1)
+metallic = 0.35
+roughness = 0.95
+
+[node name="chair,,," instance=ExtResource("1_svy3m")]
+
+[node name="Cube" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_1hoxp")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="1"]
