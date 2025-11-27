@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnv32rgeb3g28"]
+
+[ext_resource type="Texture2D" uid="uid://diuh33o1h0dt4" path="res://discocaster.png" id="1_45lwf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbl52"]
+albedo_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qhdox"]
+top_radius = 0.102
+bottom_radius = 0.13
+height = 0.08
+radial_segments = 8
+rings = 0
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7mug"]
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
+albedo_texture = ExtResource("1_45lwf")
+metallic = 0.22
+metallic_specular = 0.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.09239707, 0.09239706, 0.09239706, 1)
+emission_energy_multiplier = 16.0
+emission_operator = 1
+emission_texture = ExtResource("1_45lwf")
+uv1_scale = Vector3(0.86, 0.86, 0.86)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qmney"]
+radius = 0.102
+height = 0.102
+radial_segments = 8
+rings = 3
+is_hemisphere = true
+
+[sub_resource type="GDScript" id="GDScript_hqymv"]
+resource_name = "lightprojector"
+script/source = "@tool
+extends MeshInstance3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	rotation_degrees.y -= 80 * delta
+
+func _process(_delta):
+	pass
+"
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+material_override = SubResource("StandardMaterial3D_pbl52")
+mesh = SubResource("CylinderMesh_qhdox")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99993587, 0, 0.011323957, 0, 1, 0, -0.011323957, 0, 0.99993587, 0, 0.085, 0)
+material_override = SubResource("StandardMaterial3D_m7mug")
+mesh = SubResource("SphereMesh_qmney")
+script = SubResource("GDScript_hqymv")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+light_energy = 5.784
+light_projector = ExtResource("1_45lwf")
+shadow_enabled = true
+shadow_normal_bias = 7.186
+spot_range = 11.556292
+spot_angle = 80.0
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28685534, 0)
+light_energy = 0.08
+light_size = 0.1
+shadow_enabled = true
+shadow_blur = 10.0

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccp0e0r4rpd00"]
+
+[ext_resource type="PackedScene" uid="uid://dyva4345l0b7p" path="res://oven.blend" id="1_22qub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my181"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3n55h"]
+transparency = 1
+albedo_color = Color(0.16862746, 0.16862746, 0.16862746, 0.7411765)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i66py"]
+albedo_color = Color(0.3764706, 0.19215687, 0.19215687, 1)
+
+[node name="oven" instance=ExtResource("1_22qub")]
+
+[node name="Light" parent="." index="1"]
+visible = false
+
+[node name="Camera" parent="." index="2"]
+visible = false
+
+[node name="Cube_001" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_my181")
+
+[node name="Cube_002" parent="." index="4"]
+transform = Transform3D(0.85053587, 0, 0, 0, 0.24756017, 0, 0, 0, 0.38465172, 0, 0.6540764, 0)
+material_override = SubResource("StandardMaterial3D_3n55h")
+
+[node name="Cylinder" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_i66py")
+
+[node name="Cylinder_001" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_i66py")
+
+[node name="Cylinder_002" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_i66py")
+
+[node name="Cylinder_003" parent="." index="8"]
+material_override = SubResource("StandardMaterial3D_i66py")

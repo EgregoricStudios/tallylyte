@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dee16heb0ij5q"]
+[gd_scene load_steps=6 format=3 uid="uid://dee16heb0ij5q"]
 
 [ext_resource type="PackedScene" uid="uid://b7v0jd1eqt8jw" path="res://RECORDPLAYER.blend" id="1_l522m"]
 
@@ -12,6 +12,24 @@ metallic = 0.6
 metallic_specular = 0.36
 roughness = 0.25
 
+[sub_resource type="GDScript" id="GDScript_l522m"]
+script/source = "@tool
+extends MeshInstance3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	rotation_degrees.y -= 200 * delta
+
+func _process(_delta):
+	pass
+"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ufqq"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
@@ -24,7 +42,9 @@ emission_energy_multiplier = 10.93
 material_override = SubResource("StandardMaterial3D_qwi82")
 
 [node name="DISK" parent="." index="1"]
+transform = Transform3D(-0.78259885, 0, -0.62252635, 0, 1, 0, 0.62252635, 0, -0.78259885, -0.0787562, 0.08978155, 0.22971116)
 material_override = SubResource("StandardMaterial3D_7h26l")
+script = SubResource("GDScript_l522m")
 
 [node name="LIGHT" parent="." index="2"]
 material_override = SubResource("StandardMaterial3D_4ufqq")
@@ -33,3 +53,4 @@ material_override = SubResource("StandardMaterial3D_4ufqq")
 transform = Transform3D(100, 0, 0, 0, 50, 0, 0, 0, 100, 0, 0.346323, 0)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.02
+shadow_enabled = true
