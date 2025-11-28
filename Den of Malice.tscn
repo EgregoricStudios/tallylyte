@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cvfah2fy88u6g"]
+[gd_scene load_steps=47 format=3 uid="uid://cvfah2fy88u6g"]
 
 [ext_resource type="Texture2D" uid="uid://cxf7d52dfj0ur" path="res://yardstick.png" id="1_7oy2m"]
 [ext_resource type="Texture2D" uid="uid://dp268hmmg1nef" path="res://malicecarpet.png" id="2_hvaao"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://bhf03ih01gbc8" path="res://tshyvul_light.png" id="14_nswfr"]
 [ext_resource type="Texture2D" uid="uid://cebnvx4q82u1g" path="res://tshyvullightemissionmap.png" id="15_6jbcy"]
 [ext_resource type="Texture2D" uid="uid://dlsu0gqr2tnbk" path="res://placeholder_malicebackdrop.jpg" id="17_ky0kg"]
+[ext_resource type="PackedScene" uid="uid://ccp0e0r4rpd00" path="res://oven.tscn" id="19_4seu8"]
+[ext_resource type="PackedScene" uid="uid://w7pmwe6sfgwc" path="res://malice_bed.tscn" id="20_e2jlw"]
 
 [sub_resource type="Environment" id="Environment_y8ni3"]
 
@@ -55,7 +57,7 @@ albedo_texture = ExtResource("2_rva18")
 next_pass = ExtResource("9_70ufu")
 
 [sub_resource type="BoxMesh" id="BoxMesh_nswfr"]
-size = Vector3(0.181, 6.3, 1.1)
+size = Vector3(0.181, 6.3, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jbcy"]
 next_pass = ExtResource("9_70ufu")
@@ -96,6 +98,12 @@ uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_l8y72"]
 size = Vector3(0.585, 6.3, 1.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e2jlw"]
+size = Vector3(0.181, 3.52, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i8if2"]
+size = Vector3(0.181, 6.3, 1.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in3uw"]
 transparency = 1
@@ -218,8 +226,33 @@ offset_right = 1937.415
 offset_bottom = 504.0
 color = Color(0.19076231, 0.19076234, 0.19076231, 1)
 
+[node name="ColorRect6" type="ColorRect" parent="main display/2d root/CanvasLayer/2d screenspace censorship"]
+offset_left = 1340.0
+offset_top = 690.0
+offset_right = 1613.0
+offset_bottom = 728.0
+color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="main display/2d root/CanvasLayer/2d screenspace censorship"]
+texture_filter = 6
+offset_left = 1492.0
+offset_top = 460.0
+offset_right = 1537.415
+offset_bottom = 472.05408
+rotation = 1.5707964
+color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="main display/2d root/CanvasLayer/2d screenspace censorship"]
+texture_filter = 6
+offset_left = 1437.0
+offset_top = 452.0
+offset_right = 1482.415
+offset_bottom = 464.05408
+rotation = 0.08159053
+color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+
 [node name="sizeref" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.403, 5.05, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.597, 5.05, -0.5)
 material_override = SubResource("StandardMaterial3D_wiwth")
 mesh = SubResource("BoxMesh_j6ja2")
 
@@ -298,14 +331,32 @@ material_override = SubResource("StandardMaterial3D_fiux4")
 mesh = SubResource("BoxMesh_sfdon")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="walls"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 3.5527137e-15, 0, 0, 1, 0, 4.530993, -3.6578345)
+[node name="Node3D" parent="walls" instance=ExtResource("9_l8y72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.056349, 1.0840961, -3.250035)
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 3.5527137e-15, 0, 0, 1, 8, -0.6703727, -3.6578345)
 material_override = SubResource("StandardMaterial3D_sfdon")
 mesh = SubResource("BoxMesh_nswfr")
 skeleton = NodePath("../..")
 
-[node name="Node3D" parent="walls" instance=ExtResource("9_l8y72")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.056349, 1.0840961, -3.250035)
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.371139e-08, 8, 3, -2.259)
+material_override = SubResource("StandardMaterial3D_6jbcy")
+mesh = SubResource("BoxMesh_hxc0h")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 3.5527137e-15, 0, 0, 1, 8, 5.15015, -3.6578345)
+material_override = SubResource("StandardMaterial3D_sfdon")
+mesh = SubResource("BoxMesh_e2jlw")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.3711392e-08, 1, 0, -1, -4.371139e-08, 8, 6.444817, -2.259)
+material_override = SubResource("StandardMaterial3D_6jbcy")
+mesh = SubResource("BoxMesh_i8if2")
+skeleton = NodePath("../..")
 
 [node name="StairsUp" type="Sprite3D" parent="."]
 transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -1.7244604, 1.264733, -3.996519)
@@ -349,3 +400,9 @@ shadow_blur = 3.621
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(10.945, 0, 0, 0, 10.945, 0, 0, 0, 10.945, 0, 11.022581, -24.08302)
 texture = ExtResource("17_ky0kg")
+
+[node name="oven" parent="." instance=ExtResource("19_4seu8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3193135, 0, -3.526664)
+
+[node name="Malice_Bed" parent="." instance=ExtResource("20_e2jlw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.452136, 3.5230794, -1.0053844)

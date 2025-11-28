@@ -37,3 +37,15 @@ material_override = SubResource("StandardMaterial3D_i66py")
 
 [node name="Cylinder_003" parent="." index="8"]
 material_override = SubResource("StandardMaterial3D_i66py")
+
+[node name="Cylinder_004" parent="." index="9"]
+transform = Transform3D(-6.3381513e-09, 0.189, 6.3381513e-09, 0, -8.261452e-09, 0.145, 0.145, 8.261452e-09, 2.770494e-16, -0.38044924, 1.1566463, 0.18586066)
+
+[node name="Cylinder_005" parent="." index="10"]
+transform = Transform3D(-6.3381513e-09, 0.189, 6.3381513e-09, 0, -8.261452e-09, 0.145, 0.145, 8.261452e-09, 2.770494e-16, -0.38044924, 1.1566463, -0.41567668)
+
+[node name="Cylinder_006" parent="." index="11"]
+transform = Transform3D(-6.3381513e-09, 0.189, 6.3381513e-09, 0, -8.261452e-09, 0.145, 0.145, 8.261452e-09, 2.770494e-16, -0.38044924, 1.1566463, -0.22329846)
+
+[node name="Cylinder_007" parent="." index="12"]
+transform = Transform3D(-6.3381513e-09, 0.189, 6.3381513e-09, 0, -8.261452e-09, 0.145, 0.145, 8.261452e-09, 2.770494e-16, -0.38044924, 1.1566463, 0.39620605)
