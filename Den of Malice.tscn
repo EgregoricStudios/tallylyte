@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cvfah2fy88u6g"]
+[gd_scene load_steps=49 format=3 uid="uid://cvfah2fy88u6g"]
 
 [ext_resource type="Texture2D" uid="uid://cxf7d52dfj0ur" path="res://yardstick.png" id="1_7oy2m"]
 [ext_resource type="Texture2D" uid="uid://dp268hmmg1nef" path="res://malicecarpet.png" id="2_hvaao"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://w7pmwe6sfgwc" path="res://malice_bed.tscn" id="20_e2jlw"]
 
 [sub_resource type="Environment" id="Environment_y8ni3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2jlw"]
+size = Vector2(969, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6tky"]
 size = Vector2(2046.95, 50)
@@ -75,7 +78,8 @@ uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_70ufu"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_sfdon"]
+[sub_resource type="BoxMesh" id="BoxMesh_guo7y"]
+size = Vector3(0.2, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kn2x0"]
 albedo_color = Color(0.5690257, 0.39368528, 0.2876414, 1)
@@ -98,6 +102,9 @@ uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_l8y72"]
 size = Vector3(0.585, 6.3, 1.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_khg8a"]
+size = Vector3(0.235, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_e2jlw"]
 size = Vector3(0.181, 3.52, 4)
@@ -143,6 +150,13 @@ top_level = true
 [node name="2d root" type="Node2D" parent="main display"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="main display/2d root"]
+
+[node name="floors_standables" type="StaticBody2D" parent="main display/2d root/CanvasLayer"]
+position = Vector2(948, 504)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/floors_standables"]
+position = Vector2(484.5, 205)
+shape = SubResource("RectangleShape2D_e2jlw")
 
 [node name="screen boundaries" type="StaticBody2D" parent="main display/2d root/CanvasLayer"]
 
@@ -251,6 +265,13 @@ offset_bottom = 464.05408
 rotation = 0.08159053
 color = Color(0.19076231, 0.19076234, 0.19076231, 1)
 
+[node name="ColorRect9" type="ColorRect" parent="main display/2d root/CanvasLayer/2d screenspace censorship"]
+offset_left = 1782.0
+offset_top = 651.0
+offset_right = 1937.0
+offset_bottom = 689.0
+color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+
 [node name="sizeref" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.597, 5.05, -0.5)
 material_override = SubResource("StandardMaterial3D_wiwth")
@@ -300,7 +321,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1.1364993e-06, 1.9999999, -4.109081e-07, -6.2117604e-22, -8.742279e-08, 10.185881, 29.999994, 2.5352604e-06, 7.6658684e-14, -15.5, 3.775, -1.071)
 layers = 17
 material_override = SubResource("StandardMaterial3D_fiux4")
-mesh = SubResource("BoxMesh_sfdon")
+mesh = SubResource("BoxMesh_guo7y")
 skeleton = NodePath("../..")
 
 [node name="Wall borders" type="Node3D" parent="walls"]
@@ -328,7 +349,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1.1364993e-06, 1.9999999, -4.109081e-07, -6.2117604e-22, -8.742279e-08, 10.185881, 29.999994, 2.5352604e-06, 7.6658684e-14, 15.5, 1.4166145, -1.071)
 layers = 17
 material_override = SubResource("StandardMaterial3D_fiux4")
-mesh = SubResource("BoxMesh_sfdon")
+mesh = SubResource("BoxMesh_khg8a")
 skeleton = NodePath("../..")
 
 [node name="Node3D" parent="walls" instance=ExtResource("9_l8y72")]
@@ -405,4 +426,4 @@ texture = ExtResource("17_ky0kg")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3193135, 0, -3.526664)
 
 [node name="Malice_Bed" parent="." instance=ExtResource("20_e2jlw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.452136, 3.5230794, -1.0053844)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.452136, 3.5230794, -0.6564307)
