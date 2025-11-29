@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cvfah2fy88u6g"]
+[gd_scene load_steps=54 format=3 uid="uid://cvfah2fy88u6g"]
 
 [ext_resource type="Texture2D" uid="uid://cxf7d52dfj0ur" path="res://yardstick.png" id="1_7oy2m"]
 [ext_resource type="Texture2D" uid="uid://dp268hmmg1nef" path="res://malicecarpet.png" id="2_hvaao"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dlsu0gqr2tnbk" path="res://placeholder_malicebackdrop.jpg" id="17_ky0kg"]
 [ext_resource type="PackedScene" uid="uid://ccp0e0r4rpd00" path="res://oven.tscn" id="19_4seu8"]
 [ext_resource type="PackedScene" uid="uid://w7pmwe6sfgwc" path="res://malice_bed.tscn" id="20_e2jlw"]
+[ext_resource type="PackedScene" uid="uid://dcdixug745l6k" path="res://kitchen_sink.tscn" id="21_i8if2"]
 
 [sub_resource type="Environment" id="Environment_y8ni3"]
 
@@ -111,6 +112,24 @@ size = Vector3(0.181, 3.52, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8if2"]
 size = Vector3(0.181, 6.3, 1.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8if2"]
+render_priority = 0
+shader = ExtResource("2_oncfg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guo7y"]
+next_pass = SubResource("ShaderMaterial_i8if2")
+albedo_color = Color(0.9776916, 0.9043261, 0.81812185, 1)
+metallic = 0.75
+metallic_specular = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcbcy"]
+size = Vector3(8, 1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8if2"]
+albedo_color = Color(0.647278, 0.99999994, 0.73989904, 1)
+metallic_specular = 0.75
+roughness = 0.75
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in3uw"]
 transparency = 1
@@ -379,6 +398,16 @@ material_override = SubResource("StandardMaterial3D_6jbcy")
 mesh = SubResource("BoxMesh_i8if2")
 skeleton = NodePath("../..")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.499, -1.775145)
+material_override = SubResource("StandardMaterial3D_guo7y")
+mesh = SubResource("BoxMesh_vcbcy")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4, 0.952334, -4.449)
+material_override = SubResource("StandardMaterial3D_i8if2")
+mesh = SubResource("BoxMesh_vcbcy")
+
 [node name="StairsUp" type="Sprite3D" parent="."]
 transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -1.7244604, 1.264733, -3.996519)
 material_override = SubResource("StandardMaterial3D_in3uw")
@@ -423,7 +452,16 @@ transform = Transform3D(10.945, 0, 0, 0, 10.945, 0, 0, 0, 10.945, 0, 11.022581, 
 texture = ExtResource("17_ky0kg")
 
 [node name="oven" parent="." instance=ExtResource("19_4seu8")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3193135, 0, -3.526664)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.9095063, 0, -3.526664)
 
 [node name="Malice_Bed" parent="." instance=ExtResource("20_e2jlw")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.452136, 3.5230794, -0.6564307)
+
+[node name="kitchensink" parent="." instance=ExtResource("21_i8if2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0010824, 0, -3.4791155)
+
+[node name="weirdwalllamp3" parent="." instance=ExtResource("6_rva18")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2.5, 2.96, 0.071)
+
+[node name="weirdwalllamp4" parent="." instance=ExtResource("6_rva18")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5, 2.96, 0.071)
