@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cvfah2fy88u6g"]
+[gd_scene load_steps=67 format=3 uid="uid://cvfah2fy88u6g"]
 
 [ext_resource type="Texture2D" uid="uid://cxf7d52dfj0ur" path="res://yardstick.png" id="1_7oy2m"]
 [ext_resource type="Texture2D" uid="uid://dp268hmmg1nef" path="res://malicecarpet.png" id="2_hvaao"]
@@ -17,14 +17,22 @@
 [ext_resource type="Texture2D" uid="uid://ultumgl5lfi5" path="res://tilef.png" id="11_vcbcy"]
 [ext_resource type="PackedScene" uid="uid://lanbi7lx8nl5" path="res://entertainmenttable.tscn" id="12_in3uw"]
 [ext_resource type="PackedScene" uid="uid://dee16heb0ij5q" path="res://turntable.tscn" id="12_sfdon"]
+[ext_resource type="Texture2D" uid="uid://cwo2uxyqrpkgk" path="res://tallylyte_stairwell_top.png" id="13_vcbcy"]
 [ext_resource type="Texture2D" uid="uid://bhf03ih01gbc8" path="res://tshyvul_light.png" id="14_nswfr"]
 [ext_resource type="Texture2D" uid="uid://cebnvx4q82u1g" path="res://tshyvullightemissionmap.png" id="15_6jbcy"]
 [ext_resource type="Texture2D" uid="uid://dlsu0gqr2tnbk" path="res://placeholder_malicebackdrop.jpg" id="17_ky0kg"]
 [ext_resource type="PackedScene" uid="uid://ccp0e0r4rpd00" path="res://oven.tscn" id="19_4seu8"]
 [ext_resource type="PackedScene" uid="uid://w7pmwe6sfgwc" path="res://malice_bed.tscn" id="20_e2jlw"]
 [ext_resource type="PackedScene" uid="uid://dcdixug745l6k" path="res://kitchen_sink.tscn" id="21_i8if2"]
+[ext_resource type="PackedScene" uid="uid://df5j70dfy085r" path="res://handrail.tscn" id="25_ds8dm"]
 
 [sub_resource type="Environment" id="Environment_y8ni3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds8dm"]
+size = Vector2(13, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g06a1"]
+size = Vector2(167, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2jlw"]
 size = Vector2(969, 38)
@@ -109,6 +117,22 @@ size = Vector3(0.585, 6.3, 1.1)
 [sub_resource type="BoxMesh" id="BoxMesh_khg8a"]
 size = Vector3(0.235, 1, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in3uw"]
+transparency = 1
+albedo_texture = ExtResource("10_70ufu")
+emission = Color(0.16196388, 0.10875226, 0, 1)
+emission_energy_multiplier = 0.35
+emission_texture = ExtResource("10_70ufu")
+heightmap_scale = 2.793
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("10_70ufu")
+heightmap_flip_texture = true
+backlight_enabled = true
+backlight = Color(0.728822, 0.728822, 0.728822, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_e2jlw"]
 size = Vector3(0.181, 3.52, 4)
 
@@ -174,9 +198,9 @@ roughness = 0.75
 [sub_resource type="BoxMesh" id="BoxMesh_47s84"]
 size = Vector3(8, 1, 3.735)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in3uw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47s84"]
 transparency = 1
-albedo_texture = ExtResource("10_70ufu")
+albedo_texture = ExtResource("13_vcbcy")
 emission = Color(0.16196388, 0.10875226, 0, 1)
 emission_energy_multiplier = 0.35
 emission_texture = ExtResource("10_70ufu")
@@ -216,7 +240,15 @@ top_level = true
 [node name="floors_standables" type="StaticBody2D" parent="main display/2d root/CanvasLayer"]
 position = Vector2(948, 504)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/floors_standables"]
+[node name="collisionrail" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/floors_standables"]
+position = Vector2(6.5, 157.5)
+shape = SubResource("RectangleShape2D_ds8dm")
+
+[node name="collsionbed" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/floors_standables"]
+position = Vector2(917.5, 162)
+shape = SubResource("RectangleShape2D_g06a1")
+
+[node name="collisionupperfloor" type="CollisionShape2D" parent="main display/2d root/CanvasLayer/floors_standables"]
 position = Vector2(484.5, 205)
 shape = SubResource("RectangleShape2D_e2jlw")
 
@@ -334,6 +366,14 @@ offset_right = 1937.0
 offset_bottom = 709.0
 color = Color(0.19076231, 0.19076234, 0.19076231, 1)
 
+[node name="ColorRect10" type="ColorRect" parent="main display/2d root/CanvasLayer/2d screenspace censorship"]
+texture_filter = 6
+offset_left = 953.0
+offset_top = 633.0
+offset_right = 957.0
+offset_bottom = 695.0
+color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+
 [node name="sizeref" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7146106, 5.05, -0.5)
 visible = false
@@ -415,6 +455,11 @@ material_override = SubResource("StandardMaterial3D_fiux4")
 mesh = SubResource("BoxMesh_khg8a")
 skeleton = NodePath("../..")
 
+[node name="StairsUp" type="Sprite3D" parent="walls"]
+transform = Transform3D(0.19500001, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -1.7244606, 1.264733, -3.996519)
+material_override = SubResource("StandardMaterial3D_in3uw")
+texture = ExtResource("10_70ufu")
+
 [node name="Node3D" parent="walls" instance=ExtResource("9_l8y72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.056349, 1.0840961, -3.250035)
 
@@ -472,10 +517,10 @@ transform = Transform3D(0.9962326, -3.790698e-09, 0.08672106, -0.08672106, -4.35
 material_override = SubResource("StandardMaterial3D_g06a1")
 mesh = SubResource("BoxMesh_47s84")
 
-[node name="StairsUp" type="Sprite3D" parent="."]
-transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.195, -1.7244604, 1.264733, -3.996519)
-material_override = SubResource("StandardMaterial3D_in3uw")
-texture = ExtResource("10_70ufu")
+[node name="StairsDown" type="Sprite3D" parent="walls"]
+transform = Transform3D(0.19500001, 0, 0, 0, 0.195, 0, 0, 0, 0.195, 2.095471, 4.796576, -3.996519)
+material_override = SubResource("StandardMaterial3D_47s84")
+texture = ExtResource("13_vcbcy")
 
 [node name="furniture" type="Node3D" parent="."]
 
@@ -529,3 +574,9 @@ transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 2.5,
 
 [node name="weirdwalllamp4" parent="." instance=ExtResource("6_rva18")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 5.5, 2.96, 0.071)
+
+[node name="weirdwalllamp5" parent="." instance=ExtResource("6_rva18")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9767685, 6.4526043, -3.9999998)
+
+[node name="rail" parent="." instance=ExtResource("25_ds8dm")]
+transform = Transform3D(-6.054027e-08, 0, -1, 0, 1, 0, 1.385, 0, -4.371139e-08, 0.017820835, 3.548689, -2.3532977)

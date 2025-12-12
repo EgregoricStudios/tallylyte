@@ -1,13 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxht587flrywo"]
+[gd_scene load_steps=6 format=3 uid="uid://cxht587flrywo"]
 
 [ext_resource type="PackedScene" uid="uid://b8cm7t8x5q0m3" path="res://den_of_malice_roof.blend" id="1_kg023"]
+[ext_resource type="Texture2D" uid="uid://b36j66wwb76e8" path="res://noise.png" id="2_dkj3u"]
 [ext_resource type="Material" uid="uid://dnqxh88bnum3q" path="res://clip_intersect_blacker.tres" id="2_mrovr"]
 [ext_resource type="Texture2D" uid="uid://djffqcyojxvr2" path="res://maliceroofprojector.png" id="3_kawj8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkj3u"]
 next_pass = ExtResource("2_mrovr")
-metallic_specular = 0.2
+diffuse_mode = 3
+specular_mode = 1
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = ExtResource("2_dkj3u")
+roughness = 0.45
+roughness_texture = ExtResource("2_dkj3u")
 emission = Color(1, 1, 1, 1)
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [node name="den_of_malice_roof" instance=ExtResource("1_kg023")]
 

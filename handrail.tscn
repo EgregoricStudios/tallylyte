@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://df5j70dfy085r"]
+
+[ext_resource type="PackedScene" uid="uid://bxx88sb3whxpi" path="res://rail.blend" id="1_fuamn"]
+[ext_resource type="Texture2D" uid="uid://b36j66wwb76e8" path="res://noise.png" id="2_orwjg"]
+[ext_resource type="Material" uid="uid://dnqxh88bnum3q" path="res://clip_intersect_blacker.tres" id="3_3h15k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tr41u"]
+next_pass = ExtResource("3_3h15k")
+albedo_color = Color(0.9479746, 0.5601391, 0.522101, 1)
+albedo_texture = ExtResource("2_orwjg")
+metallic = 0.37
+metallic_specular = 1.0
+uv1_scale = Vector3(0.035, 1, 1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mwnx"]
+next_pass = ExtResource("3_3h15k")
+metallic_specular = 1.0
+
+[node name="rail" instance=ExtResource("1_fuamn")]
+
+[node name="Cube" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_tr41u")
+
+[node name="Cone" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_001" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Sphere" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Torus" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Torus_001" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Sphere_001" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_002" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_003" parent="." index="8"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Torus_002" parent="." index="9"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Sphere_002" parent="." index="10"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_004" parent="." index="11"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_005" parent="." index="12"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Torus_003" parent="." index="13"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Sphere_003" parent="." index="14"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_006" parent="." index="15"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_007" parent="." index="16"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Torus_004" parent="." index="17"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Sphere_004" parent="." index="18"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_008" parent="." index="19"]
+material_override = SubResource("StandardMaterial3D_3mwnx")
+
+[node name="Cone_009" parent="." index="20"]
+material_override = SubResource("StandardMaterial3D_3mwnx")

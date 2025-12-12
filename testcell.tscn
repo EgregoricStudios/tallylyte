@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b1nw50ssgs6ek"]
+[gd_scene load_steps=61 format=3 uid="uid://b1nw50ssgs6ek"]
 
 [ext_resource type="Script" uid="uid://bhxjxxd4vgx1b" path="res://stickman.gd" id="1_j6ja2"]
 [ext_resource type="Texture2D" uid="uid://cy3obij5styh8" path="res://sticktest.png" id="2_j6tky"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cq0em6u8rrdc6" path="res://vendc.tscn" id="16_erxu1"]
 [ext_resource type="PackedScene" uid="uid://buw71y4t30rbo" path="res://voyantewallbasementlol.blend" id="18_ygyu4"]
 [ext_resource type="PackedScene" uid="uid://dhtekbdpda5s5" path="res://voyanteceiling.blend" id="19_svrsc"]
+[ext_resource type="PackedScene" uid="uid://c2ru6o1j2yklk" path="res://lamppostmodern.tscn" id="20_dfoe3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ygyu4"]
 viewport_path = NodePath("Camera3D/Node2D/CanvasLayer/SubViewport")
@@ -463,7 +464,7 @@ offset_bottom = 1096.0
 color = Color(0.19076231, 0.19076234, 0.19076231, 1)
 
 [node name="testpill" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0.026774168)
 material_override = SubResource("ShaderMaterial_ygyu4")
 material_overlay = SubResource("StandardMaterial3D_svrsc")
 mesh = SubResource("CapsuleMesh_c1npe")
@@ -482,6 +483,7 @@ mesh = SubResource("BoxMesh_j6ja2")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.089754, 5.523023, 4.438225)
+visible = false
 light_energy = 3.309
 shadow_enabled = true
 shadow_bias = 0.33
@@ -496,6 +498,7 @@ transform = Transform3D(0.8791916, 0, -0.47646838, 0, 1, 0, 0.47646838, 0, 0.879
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -100.504585, 6.4075985, -108.80888)
+visible = false
 shadow_enabled = true
 sky_mode = 1
 
@@ -505,6 +508,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.60485935)
 [node name="voyanteceiling" parent="." instance=ExtResource("19_svrsc")]
 transform = Transform3D(1.205, 0, 0, 0, 1.205, 0, 0, 0, 1.205, 0, 16.775, -0.5346596)
 visible = false
+
+[node name="lamppostmodern" parent="." instance=ExtResource("20_dfoe3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.034442, 0, -3.8363538)
 
 [connection signal="timeout" from="Camera3D/Node2D/CanvasLayer/CharacterBody2D/Timer" to="Camera3D/Node2D/CanvasLayer/CharacterBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Camera3D/Node2D/CanvasLayer/training_dummy/Timer" to="Camera3D/Node2D/CanvasLayer/training_dummy" method="_on_timer_timeout"]
