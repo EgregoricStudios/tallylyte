@@ -163,8 +163,8 @@ metadata/extras = {
 material_override = SubResource("StandardMaterial3D_7ma0u")
 
 [node name="Cone2" type="MeshInstance3D" parent="." index="2"]
+layers = 2
 material_override = SubResource("StandardMaterial3D_7ma0u")
-cast_shadow = 0
 mesh = SubResource("ArrayMesh_4i6eb")
 skeleton = NodePath("")
 metadata/extras = {
@@ -184,6 +184,7 @@ metadata/extras = {
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.0929853, 3.3323038, 0)
+layers = 2
 light_color = Color(0.9776916, 0.9776916, 1, 1)
 light_energy = 12.685
 shadow_enabled = true
