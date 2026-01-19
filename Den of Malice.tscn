@@ -61,7 +61,8 @@ uv1_world_triplanar = true
 render_priority = 0
 shader = ExtResource("2_oncfg")
 
-[sub_resource type="BoxMesh" id="BoxMesh_7t8yo"]
+[sub_resource type="BoxMesh" id="BoxMesh_g06a1"]
+size = Vector3(0.545, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rva18"]
 transparency = 1
@@ -381,10 +382,10 @@ material_override = SubResource("StandardMaterial3D_wiwth")
 mesh = SubResource("BoxMesh_j6ja2")
 
 [node name="defaultfloor" type="MeshInstance3D" parent="."]
-transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 5, 0, -1, -2)
+transform = Transform3D(30, 0, 0, 0, 2, 0, 0, 0, 5, -7.013674, -1, -2)
 material_override = SubResource("StandardMaterial3D_nswfr")
 material_overlay = SubResource("ShaderMaterial_in3uw")
-mesh = SubResource("BoxMesh_7t8yo")
+mesh = SubResource("BoxMesh_g06a1")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.375, 0, 0, 0, 0.375, 0, 0, 0, 0.375, -7.972, 3.9982872, -3.9)
@@ -553,7 +554,6 @@ light_color = Color(1, 0.53611076, 0, 1)
 light_energy = 0.175
 light_indirect_energy = 0.0
 light_specular = 0.0
-shadow_enabled = true
 shadow_blur = 3.621
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
